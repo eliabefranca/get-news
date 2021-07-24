@@ -1,12 +1,12 @@
 {
-  "author": {
-    "name": "Eliabe França",
-    "email": "eliabe.fc@gmail.com"
-  },
+  "author": "Eliabe França <eliabe.fc@gmail.com>",
   "publishConfig": {
     "access": "public"
   },
-  "repository": "https://github.com/eliabefranca/get-news",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliabefranca/get-news.git"
+  },
   "homepage": "https://github.com/eliabefranca/get-news#reame",
   "name": "get-news",
   "version": "1.0.0",
@@ -31,5 +31,9 @@
     "test": "jest",
     "build": "rm -rf ./dist && tsc --build tsconfig.build.json",
     "release": "yarn build && yarn semantic-release && npm publish"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/eliabefranca/get-news/issues"
+  },
+  "description": ""
 }

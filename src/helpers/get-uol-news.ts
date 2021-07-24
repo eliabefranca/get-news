@@ -9,8 +9,6 @@ export const getUolNews: NewsFetcher = async (): Promise<PageData | null> => {
     .then((response) => response.data)
     .catch(() => null);
 
-  //
-
   if (!siteData) {
     return null;
   }
