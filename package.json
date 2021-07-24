@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/eliabefranca/get-news#reame",
   "name": "get-news",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "license": "MIT",
