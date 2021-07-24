@@ -43,7 +43,7 @@ exports.getUolNews = void 0;
 var axios_1 = __importDefault(require("axios"));
 var cheerio_1 = __importDefault(require("cheerio"));
 var getUolNews = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var siteData, $, pageData, mainManchet, h1, image, submancheteList;
+    var siteData, $, pageData, mainManchet, h1, image, img, submancheteList;
     var _a, _b, _c;
     return __generator(this, function (_d) {
         switch (_d.label) {
@@ -63,10 +63,11 @@ var getUolNews = function () { return __awaiter(void 0, void 0, void 0, function
                 };
                 mainManchet = $('a.manchete-editorial')[0];
                 h1 = $(mainManchet).find('h1')[0];
-                image = $(mainManchet).find('img')[0];
+                image = $(mainManchet).find('figure img')[0];
+                img = ((_a = $(image).data('original')) !== null && _a !== void 0 ? _a : $(image).data('src'));
                 pageData.news.push({
-                    link: (_a = mainManchet === null || mainManchet === void 0 ? void 0 : mainManchet.attribs) === null || _a === void 0 ? void 0 : _a.href,
-                    img: (_b = image === null || image === void 0 ? void 0 : image.attribs) === null || _b === void 0 ? void 0 : _b.src,
+                    link: (_b = mainManchet === null || mainManchet === void 0 ? void 0 : mainManchet.attribs) === null || _b === void 0 ? void 0 : _b.href,
+                    img: img,
                     title: (_c = $(h1)) === null || _c === void 0 ? void 0 : _c.text(),
                 });
                 submancheteList = $('.submanchete');
@@ -75,9 +76,10 @@ var getUolNews = function () { return __awaiter(void 0, void 0, void 0, function
                     var h1 = $($el).find('h2')[0];
                     var image = $($el).find('img')[0];
                     var anchor = $($el).find('a')[0];
+                    var img = ((_a = $(image).data('original')) !== null && _a !== void 0 ? _a : $(image).data('src'));
                     pageData.news.push({
-                        link: (_a = anchor === null || anchor === void 0 ? void 0 : anchor.attribs) === null || _a === void 0 ? void 0 : _a.href,
-                        img: (_b = image === null || image === void 0 ? void 0 : image.attribs) === null || _b === void 0 ? void 0 : _b.src,
+                        link: (_b = anchor === null || anchor === void 0 ? void 0 : anchor.attribs) === null || _b === void 0 ? void 0 : _b.href,
+                        img: img,
                         title: (_c = $(h1)) === null || _c === void 0 ? void 0 : _c.text(),
                     });
                 });

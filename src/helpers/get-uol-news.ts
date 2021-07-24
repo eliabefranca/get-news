@@ -21,11 +21,12 @@ export const getUolNews: NewsFetcher = async (): Promise<PageData | null> => {
   const mainManchet = $('a.manchete-editorial')[0];
 
   const h1 = $(mainManchet).find('h1')[0];
-  const image = $(mainManchet).find('img')[0];
+  const image = $(mainManchet).find('figure img')[0];
+  const img = ($(image).data('original') ?? $(image).data('src')) as string;
 
   pageData.news.push({
     link: mainManchet?.attribs?.href,
-    img: image?.attribs?.src,
+    img,
     title: $(h1)?.text(),
   });
 
@@ -35,9 +36,11 @@ export const getUolNews: NewsFetcher = async (): Promise<PageData | null> => {
     const image = $($el).find('img')[0];
     const anchor = $($el).find('a')[0];
 
+    const img = ($(image).data('original') ?? $(image).data('src')) as string;
+
     pageData.news.push({
       link: anchor?.attribs?.href,
-      img: image?.attribs?.src,
+      img,
       title: $(h1)?.text(),
     });
   });
