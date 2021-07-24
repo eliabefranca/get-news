@@ -17,5 +17,3 @@ export async function getAllNews(): Promise<AllNews> {
 }
 
 export { getUolNews };
-
-getAllNews().then((all) => console.log(all));
