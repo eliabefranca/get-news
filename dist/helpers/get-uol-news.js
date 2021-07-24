@@ -42,7 +42,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUolNews = void 0;
 var axios_1 = __importDefault(require("axios"));
 var cheerio_1 = __importDefault(require("cheerio"));
-// A idéia é montar uma página HTML a partir dos resultados pra jogar pro bot
 var getUolNews = function () { return __awaiter(void 0, void 0, void 0, function () {
     var siteData, $, pageData, mainManchet, h1, image, submancheteList;
     var _a, _b, _c;
@@ -63,7 +62,7 @@ var getUolNews = function () { return __awaiter(void 0, void 0, void 0, function
                     news: [],
                 };
                 mainManchet = $('a.manchete-editorial')[0];
-                h1 = $(mainManchet).find('h2')[0];
+                h1 = $(mainManchet).find('h1')[0];
                 image = $(mainManchet).find('img')[0];
                 pageData.news.push({
                     link: (_a = mainManchet === null || mainManchet === void 0 ? void 0 : mainManchet.attribs) === null || _a === void 0 ? void 0 : _a.href,

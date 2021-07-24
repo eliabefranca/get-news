@@ -58,4 +58,3 @@ function getAllNews() {
     });
 }
 exports.getAllNews = getAllNews;
-getAllNews().then(function (all) { return console.log(all); });
