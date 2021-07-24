@@ -9,7 +9,7 @@
   },
   "homepage": "https://github.com/eliabefranca/get-news#reame",
   "name": "get-news",
-  "version": "1.0.0",
+  "version": "1.0.11",
   "main": "dist/index.ts",
   "module": "dist/index.js",
   "license": "MIT",
@@ -30,7 +30,7 @@
   "scripts": {
     "test": "jest",
     "build": "rm -rf ./dist && tsc --build tsconfig.build.json",
-    "release": "yarn build && yarn semantic-release && npm publish"
+    "publish": "yarn build && npm publish"
   },
   "bugs": {
     "url": "https://github.com/eliabefranca/get-news/issues"
