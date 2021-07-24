@@ -1,0 +1,35 @@
+{
+  "author": {
+    "name": "Eliabe França",
+    "email": "eliabe.fc@gmail.com"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": "https://github.com/eliabefranca/get-news",
+  "homepage": "https://github.com/eliabefranca/get-news#reame",
+  "name": "get-news",
+  "version": "1.0.0",
+  "main": "dist/index.ts",
+  "module": "dist/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@types/node": "^16.4.1",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cherio": "^1.0.0-rc.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.24",
+    "jest": "^27.0.6",
+    "semantic-release": "^17.4.4",
+    "ts-jest": "^27.0.4"
+  },
+  "scripts": {
+    "test": "jest",
+    "build": "rm -rf ./dist && tsc --build tsconfig.build.json",
+    "release": "yarn build && yarn semantic-release && npm publish"
+  }
+}
