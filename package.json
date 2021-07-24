@@ -9,9 +9,9 @@
   },
   "homepage": "https://github.com/eliabefranca/get-news#reame",
   "name": "get-news",
-  "version": "1.0.11",
-  "main": "dist/index.ts",
-  "module": "dist/index.js",
+  "version": "1.0.131",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "license": "MIT",
   "dependencies": {
     "@types/node": "^16.4.1",
@@ -29,8 +29,7 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "rm -rf ./dist && tsc --build tsconfig.build.json",
-    "publish": "yarn build && npm publish"
+    "build": "rm -rf ./dist && tsc --build tsconfig.build.json"
   },
   "bugs": {
     "url": "https://github.com/eliabefranca/get-news/issues"

@@ -2,7 +2,6 @@ import axios from 'axios';
 import cheerio from 'cheerio';
 import { NewsFetcher, PageData } from '../models';
 
-// A idéia é montar uma página HTML a partir dos resultados pra jogar pro bot
 export const getUolNews: NewsFetcher = async (): Promise<PageData | null> => {
   const siteData = await axios
     .get<string>('https://www.uol.com.br')
@@ -21,7 +20,7 @@ export const getUolNews: NewsFetcher = async (): Promise<PageData | null> => {
 
   const mainManchet = $('a.manchete-editorial')[0];
 
-  const h1 = $(mainManchet).find('h2')[0];
+  const h1 = $(mainManchet).find('h1')[0];
   const image = $(mainManchet).find('img')[0];
 
   pageData.news.push({
