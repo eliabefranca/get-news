@@ -2,6 +2,8 @@ export interface News {
   title: string;
   img: string;
   link: string;
+  content: string | null;
+  category: string;
   isMainArticle?: boolean;
 }
 /**
