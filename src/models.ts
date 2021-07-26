@@ -2,17 +2,12 @@ export interface News {
   title: string;
   img: string;
   link: string;
-  content: string | null;
   category: string;
-  isMainArticle?: boolean;
+  fullText: string;
+  resumed: string;
 }
 /**
  * @main main news
  * @sub list of sub news
  */
-export interface PageData {
-  sourceName: string;
-  news: News[];
-}
-
-export type NewsFetcher = () => Promise<PageData | null>;
+export type NewsFetcher = () => Promise<News[] | null>;

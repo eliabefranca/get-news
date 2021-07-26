@@ -1,19 +1,3 @@
-import { getUolNews } from './helpers/get-uol-news';
-import { PageData } from './models';
+import { getUolNewsFromFrontPage } from './portals/uol.com.br/get-all-news-from-home';
 
-interface AllNews {
-  uol: PageData | null;
-}
-
-/**
- * @returns news from all available sources
- */
-export async function getAllNews(): Promise<AllNews> {
-  const uol = await getUolNews();
-
-  return {
-    uol,
-  };
-}
-
-export { getUolNews };
+export { getUolNewsFromFrontPage };

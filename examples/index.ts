@@ -1,5 +1,5 @@
-import { getUolNews } from '../src/index';
+import { getUolNewsFromFrontPage } from '../src/index';
 
-getUolNews().then((uolPageData) => {
-  console.log(uolPageData?.news);
+getUolNewsFromFrontPage().then((news) => {
+  console.log('news =>', news);
 });
